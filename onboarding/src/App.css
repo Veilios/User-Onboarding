@@ -1,24 +1,94 @@
+html {
+  font-size: 62.5%;
+}
+
 .App {
+  font-family: sans-serif;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 10px 0;
+  font-size: 1.4rem;
 }
 
-.App-intro {
-  font-size: large;
+input {
+  width: 100%;
+  margin: 5px 0 0;
+  display: block;
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  transition: all 0.3s;
+  padding: 10px;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  background-color: snow;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+input:focus {
+  outline: none;
+  border-color: teal;
 }
+
+button {
+  width: 150px;
+  display: inline-block;
+  padding: 8px 11px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  background-color: aquamarine;
+  background-image: linear-gradient(to right, #4dd0e1, #1ee7e2);
+  color: aliceblue;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  margin-left: 7.5rem;
+  margin-top: 2rem;
+}
+
+button:hover {
+  transform: scale(1.2);
+  transition: all .2s ease-in-out;
+}
+
+.error {
+  font-size: 1.2rem;
+  color: red;
+}
+
+.termsDiv {
+  display: flex;
+  align-items: center;
+  padding-left: 7.5rem;
+}
+
+.terms {
+  padding-left: 1rem;
+}
+
+.box {
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+  width: 2rem;
+}
+
+.users {
+  font-size: 2rem;
+}
+
