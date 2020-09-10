@@ -1,10 +1,21 @@
 html {
   font-size: 62.5%;
+  background-image: url("social-media-3846597.svg");
 }
 
 .App {
   font-family: sans-serif;
   text-align: center;
+}
+
+h1 {
+  font-size: 5rem;
+  border: transparent 1px;
+  border-radius: 10px;
+  background-color: skyblue;
+  width: 25%;
+  padding: 1rem;
+  display: inline-block;
 }
 
 .form {
@@ -13,6 +24,11 @@ html {
   width: 90%;
   max-width: 300px;
   margin: 0 auto;
+  border: transparent 1px;
+  padding: 50px;
+  padding-right: 65px;
+  background-color: skyblue;
+  border-radius: 10px;
 }
 
 label {
@@ -23,7 +39,7 @@ label {
   font-size: 1.4rem;
 }
 
-input {
+input, select {
   width: 100%;
   margin: 5px 0 0;
   display: block;
@@ -36,6 +52,10 @@ input {
   font-size: 1.4rem;
   letter-spacing: 0.5px;
   background-color: snow;
+}
+
+select {
+  margin-left: 15px;
 }
 
 input:focus {
@@ -90,5 +110,12 @@ button:hover {
 
 .users {
   font-size: 2rem;
+  padding: 5rem;
+  border: transparent black;
+  border-radius: 10px;
+  background-color: skyblue;
+  display: inline-block;
+  width: 30%;
 }
+
 

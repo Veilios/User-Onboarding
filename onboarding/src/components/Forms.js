@@ -6,7 +6,8 @@ const formSchema = yup.object().shape({
     name: yup.string().required("Name is a required field"),
     email: yup.string().email("Must include a valid email address").required("Must include email address"),
     password: yup.string().required("Password is required"),
-    terms: yup.boolean().oneOf([true], "Please agree to terms of use")
+    terms: yup.boolean().oneOf([true], "Please agree to terms of use"),
+    study: yup.string().required("Please select a Role")
 });
 
 const Forms = () => {
@@ -14,14 +15,16 @@ const Forms = () => {
         name: "",
         email: "",
         password: "",
-        terms: false
+        terms: false,
+        study: ""
     });
 
     const [errorState, setErrorState] = useState({
         name: "",
         email: "",
         password: "",
-        terms: ""
+        terms: "",
+        study: ""
       })
 
       const validate = (e) => {
@@ -66,6 +69,7 @@ const Forms = () => {
 
     return (
         <div>
+            <h1>Student Sign Up</h1>
             <form className="form" onSubmit={formSubmit}>
                 <label className="name" htmlFor="name">
                     Name 
@@ -82,8 +86,19 @@ const Forms = () => {
                     <input type="password" name="password" id="password" value={formState.password} onChange={inputChange} ></input>
                 </label>
                 {errorState.password.length > 0 ? <p className="error">{errorState.password}</p>: null }
+                <label>
+                    What are you studying?
+                    <select value={formState.study} name="study" id="study" onChange={inputChange}>
+                        <option value="">--Select Option--</option>
+                        <option value="Web Dev">Full Stack Web Developer</option>
+                        <option value="Android">Android Development</option>
+                        <option value="iOS">iOS Development</option>
+                        <option value="Data Science">Data Science</option>
+                    </select>
+                </label>
+                {errorState.study.length > 0 ? <p className="error">{errorState.study}</p>: null }
                 <div className="termsDiv">
-                <input className="box" type="checkbox" name="terms" id="terms" checked={formState.terms} onChange={inputChange} />
+                    <input className="box" type="checkbox" name="terms" id="terms" checked={formState.terms} onChange={inputChange} />
                     <label className="terms" htmlFor="terms">
                     
                         Terms & Conditions
@@ -95,9 +110,7 @@ const Forms = () => {
                 <button className="submit" type="submit">Submit</button>
             </form>
             <div>
-                <pre className="users">
-                    {JSON.stringify(users, null, 2)}
-                </pre>
+                {users === [] ? null : <pre className="users">{JSON.stringify(users, null, 2)}</pre>}
             </div>
         </div>
 
