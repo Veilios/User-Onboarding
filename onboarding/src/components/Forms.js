@@ -71,19 +71,19 @@ const Forms = () => {
         <div>
             <h1>Student Sign Up</h1>
             <form className="form" onSubmit={formSubmit}>
-                <label className="name" htmlFor="name">
+                <label  htmlFor="name">
                     Name 
-                    <input type="text" name="name" id="name" value={formState.name} onChange={inputChange} ></input>
+                    <input className="name" type="text" name="name" id="name" value={formState.name} onChange={inputChange} ></input>
                 </label>
                 {errorState.name.length > 0 ? <p className="error">{errorState.name}</p> : null }
-                <label  className="email" html="email">
+                <label htmlFor="email">
                     Email 
-                    <input type="text" name="email" id="email" value={formState.email} onChange={inputChange} ></input>
+                    <input className="email" type="text" name="email" id="email" value={formState.email} onChange={inputChange} ></input>
                 </label>
                 {errorState.email.length > 0 ? <p className="error" >{errorState.email}</p> : null }
-                <label className="password" htmlFor="password">
+                <label htmlFor="password">
                     Password    
-                    <input type="password" name="password" id="password" value={formState.password} onChange={inputChange} ></input>
+                    <input className="password" type="password" name="password" id="password" value={formState.password} onChange={inputChange} ></input>
                 </label>
                 {errorState.password.length > 0 ? <p className="error">{errorState.password}</p>: null }
                 <label>
